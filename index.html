@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Husna - Video Showcase</title>
+    <style>
+        /* Essential Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #121212 0%, #1db95422 100%);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #1e1e1e;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #333;
+        }
+
+        /* Video Styling */
+        .video-wrapper {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            background: #000;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        video {
+            width: 100%;
+            display: block;
+            aspect-ratio: 16 / 9; 
+            object-fit: cover;
+        }
+
+        h1 { 
+            margin: 10px 0 5px 0; 
+            font-size: clamp(18px, 5vw, 22px); 
+            letter-spacing: 0.5px; 
+        }
+
+        .artist { 
+            color: #1db954; 
+            margin-bottom: 15px; 
+            font-weight: 900; 
+            font-size: clamp(20px, 6vw, 24px);   
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+        }
+        
+        .lyrics-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            border-bottom: 2px solid #1db954;
+        }
+
+        .lyrics {
+            font-style: italic;
+            background: linear-gradient(to right, #ffffff, #1db954);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 700;
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+            margin-bottom: 15px;
+        }
+
+        .dev-container {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
+        }
+
+        .dev-by { 
+            font-size: 9px; 
+            color: #ff4d4d; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            font-weight: 800; 
+            margin-bottom: 5px;
+        }
+
+        .minhaj-text { 
+            display: flex; 
+            justify-content: center; 
+            gap: 4px; 
+        }
+
+        .minhaj-text span {
+            font-size: 18px;
+            color: #ffffff; 
+            font-weight: 900;
+            display: inline-block;
+            animation: bounce 0.8s infinite alternate;
+        }
+
+        .minhaj-text span:nth-child(2) { animation-delay: 0.1s; }
+        .minhaj-text span:nth-child(3) { animation-delay: 0.2s; }
+        .minhaj-text span:nth-child(4) { animation-delay: 0.3s; }
+        .minhaj-text span:nth-child(5) { animation-delay: 0.4s; }
+        .minhaj-text span:nth-child(6) { animation-delay: 0.5s; }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-5px); }
+        }
+
+        @media (max-width: 320px) {
+            .container { padding: 15px; }
+            h1 { font-size: 16px; }
+            .artist { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="video-wrapper">
+        <video controls poster="WhatsApp Image 2026-02-24 at 12.09.10 PM.jpeg">
+            <source src="WhatsApp Video 2026-02-24 at 10.57.28 AM.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+  
+    <h1>തങ്കമണി vision</h1>
+    <p class="artist">Husna Haris</p>
+
+    <div class="lyrics-box">
+        <div class="lyrics">
+            "ജീവിതത്തിലെ മനോഹരമായ നിമിഷങ്ങൾ <br> 
+            ഈ വീഡിയോയിലൂടെ ഓർത്തെടുക്കാം..."
+        </div>
+      
+        <div class="dev-container">
+            <div class="dev-by">DEVELOPED BY</div>
+            <div class="minhaj-text">
+                <span>M</span><span>I</span><span>N</span><span>H</span><span>A</span><span>J</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Right click protection
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Inspect tool protection
+    document.onkeydown = function(e) {
+        if(event.keyCode == 123) { return false; } 
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { return false; }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; }
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; }
+    }
+</script>
+
+</body>
+</html>
